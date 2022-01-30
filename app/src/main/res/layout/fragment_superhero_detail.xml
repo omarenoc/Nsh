@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="viewmodel"
+            name="viewModel"
             type="com.example.superheroes.viewmodel.SuperheroViewModel" />
     </data>
 
@@ -32,7 +32,7 @@
                     android:layout_width="350dp"
                     android:layout_height="350dp"
                     android:scaleType="fitCenter"
-                    app:imageUrl="@{viewmodel.hero.images.lg}"
+                    app:imageUrl="@{viewModel.hero.images.lg}"
                     tools:src="@drawable/image_superhero" />
 
                 <TextView
@@ -40,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:text="@{viewmodel.hero.name}"
+                    android:text="@{viewModel.hero.name}"
                     android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
                     tools:text="Batman" />
             </LinearLayout>
@@ -48,7 +48,7 @@
             <TextView
                 android:id="@+id/powerstats_section_title"
                 style="@style/sectionTitle"
-                android:text="Estadisticas" />
+                android:text="@string/powerstats_label" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,44 +63,44 @@
                     <TextView
                         android:id="@+id/intelligence_title"
                         style="@style/attributeGrid"
-                        android:text="Inteligencia:"
+                        android:text="@string/intelligence_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/intelligence_text"
                         style="@style/textGrid"
-                        android:text="@{viewmodel.hero.powerstats.intelligence.toString()}"
+                        android:text="@{viewModel.hero.powerstats.intelligence.toString()}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/intelligence_title"
                         tools:text="100" />
 
                     <TextView
-                        android:id="@+id/strenght_title"
+                        android:id="@+id/strength_title"
                         style="@style/attributeGrid"
-                        android:text="Fortaleza:"
+                        android:text="@string/strength_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/intelligence_title" />
 
                     <TextView
-                        android:id="@+id/strenght_text"
+                        android:id="@+id/strength_text"
                         style="@style/textGrid"
-                        android:text="@{viewmodel.hero.powerstats.strength.toString()}"
+                        android:text="@{viewModel.hero.powerstats.strength.toString()}"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/strenght_title"
+                        app:layout_constraintTop_toTopOf="@+id/strength_title"
                         tools:text="100" />
 
                     <TextView
                         android:id="@+id/speed_title"
                         style="@style/attributeGrid"
-                        android:text="Velocidad:"
+                        android:text="@string/speed_label"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/strenght_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/strength_title" />
 
                     <TextView
                         android:id="@+id/speed_text"
                         style="@style/textGrid"
-                        android:text="@{viewmodel.hero.powerstats.speed.toString()}"
+                        android:text="@{viewModel.hero.powerstats.speed.toString()}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/speed_title"
                         tools:text="100" />
@@ -108,14 +108,14 @@
                     <TextView
                         android:id="@+id/durability_title"
                         style="@style/attributeGrid"
-                        android:text="Resistencia:"
+                        android:text="@string/durability_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/speed_title" />
 
                     <TextView
                         android:id="@+id/durability_text"
                         style="@style/textGrid"
-                        android:text="@{viewmodel.hero.powerstats.durability.toString()}"
+                        android:text="@{viewModel.hero.powerstats.durability.toString()}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/durability_title"
                         tools:text="100" />
@@ -123,14 +123,14 @@
                     <TextView
                         android:id="@+id/power_title"
                         style="@style/attributeGrid"
-                        android:text="Potencia:"
+                        android:text="@string/power_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/durability_title" />
 
                     <TextView
                         android:id="@+id/power_text"
                         style="@style/textGrid"
-                        android:text="@{viewmodel.hero.powerstats.power.toString()}"
+                        android:text="@{viewModel.hero.powerstats.power.toString()}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/power_title"
                         tools:text="100" />
@@ -138,7 +138,7 @@
                     <TextView
                         android:id="@+id/combat_title"
                         style="@style/attributeGrid"
-                        android:text="Combate:"
+                        android:text="@string/combat_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/power_title"
                         app:layout_constraintBottom_toBottomOf="parent" />
@@ -146,7 +146,7 @@
                     <TextView
                         android:id="@+id/combat_text"
                         style="@style/textGrid"
-                        android:text="@{viewmodel.hero.powerstats.combat.toString()}"
+                        android:text="@{viewModel.hero.powerstats.combat.toString()}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/combat_title"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -157,7 +157,7 @@
             <TextView
                 android:id="@+id/bio_section_title"
                 style="@style/sectionTitle"
-                android:text="Biografia" />
+                android:text="@string/biography_label" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -168,77 +168,77 @@
                 <TextView
                     android:id="@+id/full_name_title"
                     style="@style/attributeTitle"
-                    android:text="Nombre completo:" />
+                    android:text="@string/fullname_label" />
 
                 <TextView
                     android:id="@+id/full_name_text"
                     style="@style/attributeText"
-                    android:text="@{viewmodel.hero.biography.fullName}"
+                    android:text="@{viewModel.hero.biography.fullName}"
                     tools:text="Bruce Wayne" />
 
                 <TextView
                     android:id="@+id/alter_ego_title"
                     style="@style/attributeTitle"
-                    android:text="Alter egos:" />
+                    android:text="@string/alter_egos_label" />
 
                 <TextView
                     android:id="@+id/alter_ego_text"
                     style="@style/attributeText"
-                    android:text="@{viewmodel.hero.biography.alterEgos}"
+                    android:text="@{viewModel.hero.biography.alterEgos}"
                     tools:text="No alter egos found." />
 
                 <TextView
                     android:id="@+id/alias_title"
                     style="@style/attributeTitle"
-                    android:text="Alias:" />
+                    android:text="@string/aliases_label" />
 
                 <TextView
                     android:id="@+id/alias_text"
                     style="@style/attributeText"
-                    android:text="@{viewmodel.hero.biography.alterEgos.toString()}"
+                    android:text="@{viewModel.hero.biography.aliases.toString()}"
                     tools:text="Insider, Matches Malone" />
 
                 <TextView
                     android:id="@+id/birthplace_title"
                     style="@style/attributeTitle"
-                    android:text="Lugar de Nacimiento:" />
+                    android:text="@string/birthplace_label" />
 
                 <TextView
                     android:id="@+id/birthplace_text"
-                    android:text="@{viewmodel.hero.biography.placeOfBirth}"
+                    android:text="@{viewModel.hero.biography.placeOfBirth}"
                     style="@style/attributeText"
                     tools:text="Crest Hill, Bristol Township; Gotham County" />
 
                 <TextView
                     android:id="@+id/fappeareance_title"
                     style="@style/attributeTitle"
-                    android:text="Primera aparicion:" />
+                    android:text="@string/first_appearance_label" />
 
                 <TextView
                     android:id="@+id/fappeareance_text"
-                    android:text="@{viewmodel.hero.biography.firstAppearance}"
+                    android:text="@{viewModel.hero.biography.firstAppearance}"
                     style="@style/attributeText"
                     tools:text="Detective Comics #27" />
 
                 <TextView
                     android:id="@+id/publisher_title"
                     style="@style/attributeTitle"
-                    android:text="Editorial:" />
+                    android:text="@string/publisher_label" />
 
                 <TextView
                     android:id="@+id/publisher_text"
-                    android:text="@{viewmodel.hero.biography.publisher}"
+                    android:text="@{viewModel.hero.biography.publisher}"
                     style="@style/attributeText"
                     tools:text="DC Comics" />
 
                 <TextView
                     android:id="@+id/alignment_title"
                     style="@style/attributeTitle"
-                    android:text="Alineacion:" />
+                    android:text="@string/alignment_label" />
 
                 <TextView
                     android:id="@+id/alignment_text"
-                    android:text="@{viewmodel.hero.biography.alignment}"
+                    android:text="@{viewModel.hero.biography.alignment}"
                     style="@style/attributeText"
                     tools:text="Good" />
             </LinearLayout>
@@ -246,7 +246,7 @@
             <TextView
                 android:id="@+id/appeareance_section_title"
                 style="@style/sectionTitle"
-                android:text="Apariencia" />
+                android:text="@string/appearance_label" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -261,13 +261,13 @@
                     <TextView
                         android:id="@+id/gender_title"
                         style="@style/attributeGrid"
-                        android:text="Genero:"
+                        android:text="@string/gender_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/gender_text"
-                        android:text="@{viewmodel.hero.appearance.gender}"
+                        android:text="@{viewModel.hero.appearance.gender}"
                         style="@style/textGrid"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/gender_title"
@@ -276,13 +276,13 @@
                     <TextView
                         android:id="@+id/race_title"
                         style="@style/attributeGrid"
-                        android:text="Raza:"
+                        android:text="@string/race_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/gender_title" />
 
                     <TextView
                         android:id="@+id/race_text"
-                        android:text="@{viewmodel.hero.appearance.race}"
+                        android:text="@{viewModel.hero.appearance.race}"
                         style="@style/textGrid"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/race_title"
@@ -291,13 +291,13 @@
                     <TextView
                         android:id="@+id/height_title"
                         style="@style/attributeGrid"
-                        android:text="Estatura:"
+                        android:text="@string/height_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/race_title" />
 
                     <TextView
                         android:id="@+id/height_text"
-                        android:text="@{viewmodel.hero.appearance.height.toString()}"
+                        android:text="@{viewModel.hero.appearance.height.toString()}"
                         style="@style/textGrid"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/height_title"
@@ -306,13 +306,13 @@
                     <TextView
                         android:id="@+id/weight_title"
                         style="@style/attributeGrid"
-                        android:text="Peso:"
+                        android:text="@string/weight_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/height_title" />
 
                     <TextView
                         android:id="@+id/weight_text"
-                        android:text="@{viewmodel.hero.appearance.weight.toString()}"
+                        android:text="@{viewModel.hero.appearance.weight.toString()}"
                         style="@style/textGrid"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/weight_title"
@@ -321,13 +321,13 @@
                     <TextView
                         android:id="@+id/eye_title"
                         style="@style/attributeGrid"
-                        android:text="Color de ojos:"
+                        android:text="@string/eyecolor_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/weight_title" />
 
                     <TextView
                         android:id="@+id/eye_text"
-                        android:text="@{viewmodel.hero.appearance.eyeColor}"
+                        android:text="@{viewModel.hero.appearance.eyeColor}"
                         style="@style/textGrid"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/eye_title"
@@ -336,14 +336,14 @@
                     <TextView
                         android:id="@+id/hair_title"
                         style="@style/attributeGrid"
-                        android:text="Color de cabello:"
+                        android:text="@string/haircolor_label"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/eye_title"
                         app:layout_constraintBottom_toBottomOf="parent" />
 
                     <TextView
                         android:id="@+id/hair_text"
-                        android:text="@{viewmodel.hero.appearance.hairColor}"
+                        android:text="@{viewModel.hero.appearance.hairColor}"
                         style="@style/textGrid"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/hair_title"
@@ -355,7 +355,7 @@
             <TextView
                 android:id="@+id/work_section_title"
                 style="@style/sectionTitle"
-                android:text="Trabajo" />
+                android:text="@string/work_label" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -366,22 +366,22 @@
                 <TextView
                     android:id="@+id/occupation_title"
                     style="@style/attributeTitle"
-                    android:text="Ocupacion:" />
+                    android:text="@string/occupation_label" />
 
                 <TextView
                     android:id="@+id/occupation_text"
-                    android:text="@{viewmodel.hero.work.occupation}"
+                    android:text="@{viewModel.hero.work.occupation}"
                     style="@style/attributeText"
                     tools:text="Businessman" />
 
                 <TextView
                     android:id="@+id/base_title"
                     style="@style/attributeTitle"
-                    android:text="Base:" />
+                    android:text="@string/base_label" />
 
                 <TextView
                     android:id="@+id/base_text"
-                    android:text="@{viewmodel.hero.work.base}"
+                    android:text="@{viewModel.hero.work.base}"
                     style="@style/attributeText"
                     tools:text="Batcave, Stately Wayne Manor, Gotham City; Hall of Justice, Justice League Watchtower" />
             </LinearLayout>
@@ -389,7 +389,7 @@
             <TextView
                 android:id="@+id/connections_section_title"
                 style="@style/sectionTitle"
-                android:text="Conexiones" />
+                android:text="@string/connections_label" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -400,22 +400,22 @@
                 <TextView
                     android:id="@+id/affiliation_title"
                     style="@style/attributeTitle"
-                    android:text="Afiliacion de grupo:" />
+                    android:text="@string/affiliation_label" />
 
                 <TextView
                     android:id="@+id/affiliation_text"
-                    android:text="@{viewmodel.hero.connections.groupAffiliation}"
+                    android:text="@{viewModel.hero.connections.groupAffiliation}"
                     style="@style/attributeText"
                     tools:text="Batman Family, Batman Incorporated, Justice League, Outsiders, Wayne Enterprises, Club of Heroes, formerly White Lantern Corps, Sinestro Corps" />
 
                 <TextView
                     android:id="@+id/relatives_title"
                     style="@style/attributeTitle"
-                    android:text="Parientes:" />
+                    android:text="@string/relatives_label" />
 
                 <TextView
                     android:id="@+id/relatives_text"
-                    android:text="@{viewmodel.hero.connections.relatives}"
+                    android:text="@{viewModel.hero.connections.relatives}"
                     style="@style/attributeText"
                     tools:text="Damian Wayne (son), Dick Grayson (adopted son), Tim Drake (adopted son), Jason Todd (adopted son), Cassandra Cain (adopted ward)\nMartha Wayne (mother, deceased), Thomas Wayne (father, deceased), Alfred Pennyworth (former guardian), Roderick Kane (grandfather, deceased), Elizabeth Kane (grandmother, deceased), Nathan Kane (uncle, deceased), Simon Hurt (ancestor), Wayne Family" />
             </LinearLayout>

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import com.example.superheroes.R
 import com.example.superheroes.databinding.FragmentSuperheroDetailBinding
 import com.example.superheroes.viewmodel.SuperheroViewModel
 
@@ -22,9 +21,10 @@ class SuperheroDetailFragment : Fragment() {
         val binding = FragmentSuperheroDetailBinding.inflate(inflater)
         val id = navigationArgs.id
         viewModel.getHeroDetails(id)
+
         binding.lifecycleOwner = this
 
-        binding.viewmodel = viewModel
+        binding.viewModel = viewModel
 
         return binding.root
     }

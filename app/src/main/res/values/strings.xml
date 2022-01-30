@@ -2,4 +2,32 @@
     <string name="app_name">Superheroes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="powerstats_label">Powerstats</string>
+    <string name="intelligence_label">Intelligence:</string>
+    <string name="strength_label">Strength:</string>
+    <string name="speed_label">Speed:</string>
+    <string name="durability_label">Durability:</string>
+    <string name="power_label">Power:</string>
+    <string name="combat_label">Combat:</string>
+    <string name="biography_label">Biography</string>
+    <string name="fullname_label">Full name:</string>
+    <string name="alter_egos_label">Alter egos:</string>
+    <string name="aliases_label">Aliases:</string>
+    <string name="birthplace_label">Place of birth:</string>
+    <string name="first_appearance_label">First appearance:</string>
+    <string name="publisher_label">"Publisher: "</string>
+    <string name="alignment_label">"Alignment: "</string>
+    <string name="appearance_label">Appearance</string>
+    <string name="gender_label">Gender:</string>
+    <string name="race_label">Race:</string>
+    <string name="height_label">Height:</string>
+    <string name="weight_label">Weight:</string>
+    <string name="eyecolor_label">Eye color:</string>
+    <string name="haircolor_label">Hair color:</string>
+    <string name="work_label">Work</string>
+    <string name="occupation_label">Occupation:</string>
+    <string name="base_label">Base:</string>
+    <string name="connections_label">Connections:</string>
+    <string name="relatives_label">Relatives:</string>
+    <string name="affiliation_label">Group Affiliation:</string>
 </resources>

@@ -14,8 +14,8 @@ class SuperheroViewModel: ViewModel() {
     private val _response = MutableLiveData<List<Superhero>>()
     val response: LiveData<List<Superhero>> = _response
 
-    private val _hero = MutableLiveData<Superhero>()
-    val hero: LiveData<Superhero> = _hero
+    private var _hero = MutableLiveData<Superhero>()
+    var hero :LiveData<Superhero> = _hero
 
     init {
         getAll()
@@ -25,19 +25,24 @@ class SuperheroViewModel: ViewModel() {
         viewModelScope.launch {
             try {
                 _response.value = SuperheroApi.retrofitService.getAll()
-                //_items.value = getLightList(status.value)
             } catch (e: Exception) {
                 Log.e("RestService","Failure: ${e.message}")
             }
         }
     }
 
-    private fun getSuperhero(id: Int): Superhero {
-        return response.value?.get(id)!!
+    private fun getSuperhero(id: Int) {
+        viewModelScope.launch {
+            try {
+                _hero.value = SuperheroApi.retrofitService.getHero(id)
+            } catch (e: Exception) {
+                Log.e("RestService","Failure: ${e.message}")
+            }
+        }
     }
 
     fun getHeroDetails(id: Int) {
-        _hero.value = getSuperhero(id)
+        getSuperhero(id)
     }
 
 }
