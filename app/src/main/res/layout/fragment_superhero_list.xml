@@ -18,11 +18,12 @@
             android:id="@+id/items_grid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false"
+            android:clipToPadding="true"
+            android:padding="5dp"
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
-            app:listData="@{viewModel.status}"
+            app:listData="@{viewModel.response}"
             tools:itemCount="20"
             tools:listitem="@layout/list_item" />
 

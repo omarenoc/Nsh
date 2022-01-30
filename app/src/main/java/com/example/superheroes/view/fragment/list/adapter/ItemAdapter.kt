@@ -1,16 +1,12 @@
 package com.example.superheroes.view.fragment.list.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.ListAdapter
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.superheroes.R
 import com.example.superheroes.databinding.ListItemBinding
-import com.example.superheroes.model.Superhero
+import com.example.superheroes.model.data.Superhero
 
 class ItemAdapter : ListAdapter<Superhero, ItemAdapter.ItemViewHolder>(DiffCallback) {
 
@@ -25,7 +21,7 @@ class ItemAdapter : ListAdapter<Superhero, ItemAdapter.ItemViewHolder>(DiffCallb
 
     class ItemViewHolder(private var binding: ListItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(superhero: Superhero) {
-            binding.item = superhero
+            binding.hero = superhero
             binding.executePendingBindings()
         }
     }

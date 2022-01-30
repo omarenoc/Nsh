@@ -6,8 +6,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.superheroes.R
-import com.example.superheroes.model.LightSuperhero
-import com.example.superheroes.model.Superhero
+import com.example.superheroes.model.data.Superhero
 import com.example.superheroes.view.fragment.list.adapter.ItemAdapter
 
 @BindingAdapter("imageUrl")

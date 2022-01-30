@@ -1,11 +1,12 @@
 package com.example.superheroes.model.remote
 
-import com.example.superheroes.model.Superhero
+import com.example.superheroes.model.data.Superhero
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 /* Correct URL and TOKEN */
 // private const val ACCESS_TOKEN = ""
@@ -26,8 +27,8 @@ interface SuperheroApiService {
     @GET("all.json")
     suspend fun getAll(): List<Superhero>
 
-    @GET("{id}")
-    suspend fun getDetails(id: Int)
+    @GET("id/{id}.json")
+    suspend fun getHero(@Path("id") id: Int): Superhero
 }
 
 object SuperheroApi {

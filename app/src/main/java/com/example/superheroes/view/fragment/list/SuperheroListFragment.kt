@@ -22,6 +22,8 @@ class SuperheroListFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
+        binding.viewModel = viewModel
+
         binding.itemsGrid.adapter = ItemAdapter()
 
         return binding.root
