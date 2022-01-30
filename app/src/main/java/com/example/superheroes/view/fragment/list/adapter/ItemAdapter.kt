@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.superheroes.databinding.ListItemBinding
 import com.example.superheroes.model.data.Superhero
 
-class ItemAdapter : ListAdapter<Superhero, ItemAdapter.ItemViewHolder>(DiffCallback) {
+class ItemAdapter(private val onSuperheroClicked: (Superhero) -> Unit) :
+    ListAdapter<Superhero, ItemAdapter.ItemViewHolder>(DiffCallback)
+{
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(ListItemBinding.inflate(LayoutInflater.from(parent.context)))
@@ -17,6 +19,9 @@ class ItemAdapter : ListAdapter<Superhero, ItemAdapter.ItemViewHolder>(DiffCallb
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val superheroItem = getItem(position)
         holder.bind(superheroItem)
+        holder.itemView.setOnClickListener {
+            onSuperheroClicked(superheroItem)
+        }
     }
 
     class ItemViewHolder(private var binding: ListItemBinding): RecyclerView.ViewHolder(binding.root) {

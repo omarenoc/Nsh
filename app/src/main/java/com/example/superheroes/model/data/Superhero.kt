@@ -4,11 +4,11 @@ data class Superhero(
     val appearance: Appearance = Appearance(),
     val biography: Biography = Biography(),
     val connections: Connections = Connections(),
-    val id: Int = 0,
+    val id: Int? = 0,
     val images: Images = Images(),
-    val name: String = "",
+    val name: String? = "",
     val powerstats: Powerstats = Powerstats(),
-    val slug: String = "",
+    val slug: String? = "",
     val work: Work = Work()
 ) {
     data class Powerstats(
@@ -24,13 +24,13 @@ data class Superhero(
         val eyeColor: String? = "",
         val gender: String? = "",
         val hairColor: String? = "",
-        val height: List<String> = listOf(),
+        val height: List<String>? = listOf(),
         val race: String? = "",
-        val weight: List<String> = listOf()
+        val weight: List<String>? = listOf()
     )
 
     data class Biography(
-        val aliases: List<String> = listOf(),
+        val aliases: List<String>? = listOf(),
         val alignment: String? = "",
         val alterEgos: String? = "",
         val firstAppearance: String? = "",

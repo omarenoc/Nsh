@@ -14,6 +14,9 @@ class SuperheroViewModel: ViewModel() {
     private val _response = MutableLiveData<List<Superhero>>()
     val response: LiveData<List<Superhero>> = _response
 
+    private val _hero = MutableLiveData<Superhero>()
+    val hero: LiveData<Superhero> = _hero
+
     init {
         getAll()
     }
@@ -29,5 +32,12 @@ class SuperheroViewModel: ViewModel() {
         }
     }
 
+    private fun getSuperhero(id: Int): Superhero {
+        return response.value?.get(id)!!
+    }
+
+    fun getHeroDetails(id: Int) {
+        _hero.value = getSuperhero(id)
+    }
 
 }

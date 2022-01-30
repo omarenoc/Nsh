@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.superheroes.R
 import com.example.superheroes.databinding.FragmentSuperheroListBinding
 import com.example.superheroes.view.fragment.list.adapter.ItemAdapter
@@ -19,12 +20,16 @@ class SuperheroListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentSuperheroListBinding.inflate(inflater)
+        val adapter = ItemAdapter {
+            val action = SuperheroListFragmentDirections.actionSuperheroListFragmentToSuperheroDetailFragment(it.id ?: 1)
+            this.findNavController().navigate(action)
+        }
 
         binding.lifecycleOwner = this
 
         binding.viewModel = viewModel
 
-        binding.itemsGrid.adapter = ItemAdapter()
+        binding.itemsGrid.adapter = adapter
 
         return binding.root
     }
