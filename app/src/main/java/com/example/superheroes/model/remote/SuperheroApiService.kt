@@ -1,8 +1,10 @@
 package com.example.superheroes.model.remote
 
+import com.example.superheroes.model.Superhero
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
-import retrofit2.converter.scalars.ScalarsConverterFactory
-import retrofit2.create
+import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 /* Correct URL and TOKEN */
@@ -11,14 +13,18 @@ import retrofit2.http.GET
 
 private const val BASE_URL = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/"
 
+private val moshi = Moshi.Builder()
+    .add(KotlinJsonAdapterFactory())
+    .build()
+
 private val retrofit = Retrofit.Builder()
-    .addConverterFactory(ScalarsConverterFactory.create())
+    .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL)
     .build()
 
 interface SuperheroApiService {
     @GET("all.json")
-    suspend fun getAll(): String
+    suspend fun getAll(): List<Superhero>
 
     @GET("{id}")
     suspend fun getDetails(id: Int)

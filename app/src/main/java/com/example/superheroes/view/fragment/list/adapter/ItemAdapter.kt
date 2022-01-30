@@ -4,30 +4,39 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.recyclerview.widget.ListAdapter
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.superheroes.R
+import com.example.superheroes.databinding.ListItemBinding
+import com.example.superheroes.model.Superhero
 
-class ItemAdapter(
-    private val dataset: List<String>
-    ): RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+class ItemAdapter : ListAdapter<Superhero, ItemAdapter.ItemViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item, parent, false)
-        return ItemViewHolder(adapterLayout)
+        return ItemViewHolder(ListItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val item = dataset[position]
-        holder.imageView.contentDescription = item
-        holder.textView.text = item
+        val superheroItem = getItem(position)
+        holder.bind(superheroItem)
     }
 
-    override fun getItemCount(): Int = dataset.size
+    class ItemViewHolder(private var binding: ListItemBinding): RecyclerView.ViewHolder(binding.root) {
+        fun bind(superhero: Superhero) {
+            binding.item = superhero
+            binding.executePendingBindings()
+        }
+    }
 
-    class ItemViewHolder(private val view: View): RecyclerView.ViewHolder(view) {
-        val imageView: ImageView = view.findViewById(R.id.item_image)
-        val textView: TextView = view.findViewById(R.id.item_text)
+    companion object DiffCallback : DiffUtil.ItemCallback<Superhero>() {
+        override fun areItemsTheSame(oldItem: Superhero, newItem: Superhero): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: Superhero, newItem: Superhero): Boolean {
+            return oldItem.name == newItem.name
+        }
     }
 }
