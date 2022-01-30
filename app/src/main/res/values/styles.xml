@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="sectionTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+    <style name="attributeTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleSmall</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:layout_marginBottom">3dp</item>
+    </style>
+    <style name="attributeText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:layout_marginBottom">3dp</item>
+    </style>
+    <style name="attributeGrid">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleSmall</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+    </style>
+    <style name="textGrid">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginBottom">3dp</item>
+    </style>
+</resources>
