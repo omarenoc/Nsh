@@ -1,5 +1,5 @@
 # SuperheroApp
-An Application that shows a great list of Superheroes.
+An Android Application that shows a great list of Superheroes.
 
 You can click on a superhero's card and you will get
 more interesting details about them.
