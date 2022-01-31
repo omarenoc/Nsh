@@ -15,7 +15,7 @@ Sections are as follows:
 - Connections. 
 
 During the development of this project I used the
-Retrofit and Moshi libraries to get the data internet. 
+Retrofit and Moshi libraries to get data from internet. 
 
 This project uses MVVM architectural pattern with dataBinding 
 and LiveData. 
