@@ -14,11 +14,12 @@ class SuperheroDetailFragment : Fragment() {
     private val navigationArgs: SuperheroDetailFragmentArgs by navArgs()
     private val viewModel: SuperheroViewModel by viewModels()
 
+    lateinit var binding: FragmentSuperheroDetailBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentSuperheroDetailBinding.inflate(inflater)
+        binding = FragmentSuperheroDetailBinding.inflate(inflater)
         val id = navigationArgs.id
         viewModel.getHeroDetails(id)
 
@@ -27,6 +28,15 @@ class SuperheroDetailFragment : Fragment() {
         binding.viewModel = viewModel
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.psCard.setOnClickListener { viewModel.setContentVisibility(binding.powerstatsContents) }
+        binding.bioCard.setOnClickListener { viewModel.setContentVisibility(binding.biographyContents) }
+        binding.aprCard.setOnClickListener { viewModel.setContentVisibility(binding.appearanceContents) }
+        binding.wkCard.setOnClickListener { viewModel.setContentVisibility(binding.workContents) }
+        binding.cnnCard.setOnClickListener { viewModel.setContentVisibility(binding.connectionsContents) }
     }
 
 }

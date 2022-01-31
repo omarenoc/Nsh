@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.superheroes.R
 import com.example.superheroes.databinding.FragmentSuperheroListBinding
 import com.example.superheroes.view.fragment.list.adapter.ItemAdapter
 import com.example.superheroes.viewmodel.SuperheroViewModel

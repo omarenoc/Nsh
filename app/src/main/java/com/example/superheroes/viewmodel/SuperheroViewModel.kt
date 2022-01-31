@@ -1,6 +1,7 @@
 package com.example.superheroes.viewmodel
 
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -43,6 +44,14 @@ class SuperheroViewModel: ViewModel() {
 
     fun getHeroDetails(id: Int) {
         getSuperhero(id)
+    }
+
+    fun setContentVisibility(view: View) {
+        if (view.visibility == View.GONE) {
+            view.visibility = View.VISIBLE
+        } else {
+            view.visibility = View.GONE
+        }
     }
 
 }
