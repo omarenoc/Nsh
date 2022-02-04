@@ -32,7 +32,7 @@
                     android:layout_width="350dp"
                     android:layout_height="350dp"
                     android:scaleType="fitCenter"
-                    app:imageUrl="@{viewModel.hero.images.lg}"
+                    app:imageUrl="@{viewModel.hero.images.url}"
                     tools:src="@drawable/image_superhero" />
 
                 <TextView

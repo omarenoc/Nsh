@@ -9,10 +9,8 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 /* Correct URL and TOKEN */
-// private const val ACCESS_TOKEN = ""
-// private const val BASE_URL = "https://superheroapi.com/api/$ACCESS_TOKEN/"
-
-private const val BASE_URL = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/"
+private const val ACCESS_TOKEN = "461455927790948"
+private const val BASE_URL = "https://superheroapi.com/api/$ACCESS_TOKEN/"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -24,10 +22,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface SuperheroApiService {
-    @GET("all.json")
-    suspend fun getAll(): List<Superhero>
-
-    @GET("id/{id}.json")
+    @GET("{id}")
     suspend fun getHero(@Path("id") id: Int): Superhero
 }
 

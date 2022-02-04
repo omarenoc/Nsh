@@ -20,7 +20,7 @@ class SuperheroListFragment : Fragment() {
     ): View? {
         val binding = FragmentSuperheroListBinding.inflate(inflater)
         val adapter = ItemAdapter {
-            val action = SuperheroListFragmentDirections.actionSuperheroListFragmentToSuperheroDetailFragment(it.id)
+            val action = SuperheroListFragmentDirections.actionSuperheroListFragmentToSuperheroDetailFragment(it.id.toInt())
             this.findNavController().navigate(action)
         }
 
@@ -29,6 +29,8 @@ class SuperheroListFragment : Fragment() {
         binding.viewModel = viewModel
 
         binding.itemsGrid.adapter = adapter
+
+        adapter.notifyDataSetChanged()
 
         return binding.root
     }
